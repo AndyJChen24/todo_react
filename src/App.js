@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import components
 import Form from './components/Form'
-
+import TodoList from './components/TodoList'
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,7 @@ function App() {
         <h1>My Todo List</h1>
       </header>
       <Form />
+      <TodoList />
     </div>
   );
 }
