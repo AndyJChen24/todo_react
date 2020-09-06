@@ -14,7 +14,7 @@ function App() {
       </header>
       {/* pass  down state as props*/}
       <Form todos ={todos} setTodos={setTodos} inputText={inputText}setInputText={setInputText}/>
-      <TodoList />
+      <TodoList todos ={todos} setTodos={setTodos}/>
     </div>
   );
 }
