@@ -7,13 +7,20 @@ function App() {
   // set input text from text box
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
   return (
     <div className="App">
       <header>
         <h1>My Todo List</h1>
       </header>
       {/* pass  down state as props*/}
-      <Form todos ={todos} setTodos={setTodos} inputText={inputText}setInputText={setInputText}/>
+      <Form 
+        todos ={todos} 
+        setTodos={setTodos} 
+        inputText={inputText}
+        setInputText={setInputText}
+        setStatus={setStatus}
+      />
       <TodoList todos ={todos} setTodos={setTodos}/>
     </div>
   );

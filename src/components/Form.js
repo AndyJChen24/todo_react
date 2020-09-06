@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({inputText, setInputText, todos, setTodos}) =>{
+const Form = ({inputText, setInputText, todos, setTodos, setStatus}) =>{
     // handle user input text
     const inputTextHandler =(e) =>{
         // set user input to state
@@ -15,13 +15,17 @@ const Form = ({inputText, setInputText, todos, setTodos}) =>{
         //clear state once submit button is pushed
         setInputText('')
     }
+
+    const statusHandler = (e) =>{
+        setStatus(e.target.value)
+    }
     return(
         <form>
             <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
-            <div className="select">
+            <div onChange={statusHandler} className="select">
                 <select name="todos" className="filter-todo">
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
